@@ -7,22 +7,22 @@ const router = express.Router();
 //company api
 
 router.post(
-    "/registerCompany",
-    authenticateToken,
-    CompanyController.registerCompany
-  );
-  router.get("/getCompany", authenticateToken, CompanyController.getCompany);
+  "/registerCompany",
+  authenticateToken,
+  CompanyController.registerCompany
+);
+router.get("/getCompany", authenticateToken, CompanyController.getCompany);
 
-  router.get(
-    "/getCompanyId/:id",
-    authenticateToken,
-    CompanyController.getCompanyById
-  );
-  
-  router.put(
-    "/updateCompany/:id",
-    authenticateToken,
-    CompanyController.updateCompany
-  );
-  
-  export default router;
+router.get(
+  "/getCompanyId/:id",
+  authenticateToken,
+  CompanyController.getCompanyById
+);
+
+router.put(
+  "/ /:id",
+  authenticateToken,
+  CompanyController.updateCompany
+);
+
+export default router;

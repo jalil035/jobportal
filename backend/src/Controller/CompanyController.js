@@ -11,9 +11,9 @@ export const registerCompany = async (req, res) => {
         success: false,
       });
     }
-    
+
     // check if company already exists
-    let company = await CompanyModel.findOne({ name: companyName }); // Fixed field name
+    let company = await CompanyModel.findOne({ companyName }); // Fixed field name
     if (company) {
       return res.status(400).json({
         message: "Company Already Exists",
@@ -23,7 +23,7 @@ export const registerCompany = async (req, res) => {
 
     // create a new company
     company = await CompanyModel.create({
-      name: companyName, // Fixed field name
+      companyName, // Fixed field name
       userId: req.id,
     });
 
@@ -80,13 +80,13 @@ export const getCompanyById = async (req, res) => {
 // Update Company
 export const updateCompany = async (req, res) => {
   try {
-    const { name, description, website, location } = req.body;
+    const { companyName, description, website, location } = req.body;
     const file = req.file;
 
     // এখানে cloudinary আসবে (ফাইল আপলোডের জন্য)
 
     // Update Company Data
-    const updateData = { name, description, website, location };
+    const updateData = { companyName, description, website, location };
     const company = await CompanyModel.findByIdAndUpdate(
       req.params.id,
       updateData,

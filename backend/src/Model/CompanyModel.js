@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const CompanySchema = mongoose.Schema(
   {
-    name: {
+    companyName: {
       type: String,
       required: true,
       unique: true,
@@ -28,6 +28,6 @@ const CompanySchema = mongoose.Schema(
   { timestamps: true, versionKey: false }
 );
 
-const CompanyModel = mongoose.model("Company", CompanySchema);
+const CompanyModel = mongoose.model("companies", CompanySchema);
 
 export default CompanyModel;
