@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser";
 import mongoose from "mongoose";
 import UserRouter from "../backend/src/Router/api.js";
 import CompanyRouter from "../backend/src/Router/company.js";
+import JobRouter from "../backend/src/Router/jobrouts.js";
 
 import {
   DATABASE,
@@ -39,3 +40,4 @@ mongoose
 
 app.use("/user", UserRouter);
 app.use("/company", CompanyRouter);
+app.use("/job", JobRouter);

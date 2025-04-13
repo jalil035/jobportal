@@ -21,13 +21,13 @@ const CompanySchema = mongoose.Schema(
     },
     userId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref:'User',
+      ref: "User",
       required: true,
     },
   },
   { timestamps: true, versionKey: false }
 );
 
-const CompanyModel = mongoose.model("companies", CompanySchema);
+const CompanyModel = mongoose.model("company", CompanySchema);
 
 export default CompanyModel;
